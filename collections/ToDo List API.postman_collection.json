@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "ef6943b5-bfac-440e-a46b-5a6f0654df8f",
+		"name": "ToDo List API",
+		"description": "Manages ToDo list tasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21429501"
+	},
+	"item": [
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "{task Id}",
+					"item": [
+						{
+							"name": "/tasks/:taskId",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tasks/:taskId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks",
+										":taskId"
+									],
+									"variable": [
+										{
+											"key": "taskId",
+											"value": "1",
+											"description": "(Required) Id of the task"
+										}
+									]
+								},
+								"description": "Gets the informaiton for the specified task"
+							},
+							"response": [
+								{
+									"name": "Got back the specified task",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:taskId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":taskId"
+											],
+											"variable": [
+												{
+													"key": "taskId",
+													"value": "1",
+													"description": "(Required) Id of the task"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"consequat enim\",\n  \"status\": \"Completed\",\n  \"dueDate\": \"1982-12-23T18:35:27.750Z\"\n}"
+								},
+								{
+									"name": "sent wrongly formatted data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:taskId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":taskId"
+											],
+											"variable": [
+												{
+													"key": "taskId",
+													"value": "1",
+													"description": "(Required) Id of the task"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "\"Bad data sent\""
+								}
+							]
+						},
+						{
+							"name": "/tasks/:taskId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Learn API Testing\",\n  \"status\": \"New\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tasks/:taskId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks",
+										":taskId"
+									],
+									"variable": [
+										{
+											"key": "taskId",
+											"value": "1",
+											"description": "(Required) Id of the task"
+										}
+									]
+								},
+								"description": "Changes the description for the specified task"
+							},
+							"response": [
+								{
+									"name": "task updated correctly",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:taskId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":taskId"
+											],
+											"variable": [
+												{
+													"key": "taskId",
+													"value": "1",
+													"description": "(Required) Id of the task"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"consequat enim\",\n  \"status\": \"Completed\",\n  \"dueDate\": \"1982-12-23T18:35:27.750Z\"\n}"
+								},
+								{
+									"name": "send wrongly formatted data",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:taskId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":taskId"
+											],
+											"variable": [
+												{
+													"key": "taskId",
+													"value": "1",
+													"description": "(Required) Id of the task"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "\"Bad data sent\""
+								}
+							]
+						},
+						{
+							"name": "/tasks/:taskId",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tasks/:taskId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks",
+										":taskId"
+									],
+									"variable": [
+										{
+											"key": "taskId",
+											"value": "1",
+											"description": "(Required) Id of the task"
+										}
+									]
+								},
+								"description": "Removes the specified task"
+							},
+							"response": [
+								{
+									"name": "specified task removed",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:taskId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":taskId"
+											],
+											"variable": [
+												{
+													"key": "taskId",
+													"value": "1",
+													"description": "(Required) Id of the task"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "gets the list of all tasks for the current user"
+					},
+					"response": [
+						{
+							"name": "got back the list of tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"title\": \"voluptate sed aliqua ipsum\",\n    \"status\": \"New\",\n    \"dueDate\": \"1966-11-09T14:02:27.098Z\"\n  },\n  {\n    \"title\": \"dolor adipisicing non mollit\",\n    \"status\": \"Completed\",\n    \"dueDate\": \"1987-10-14T05:05:44.971Z\"\n  }\n]"
+						},
+						{
+							"name": "sent wrongly formatted data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"Bad data sent\""
+						}
+					]
+				},
+				{
+					"name": "/tasks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Learn API Testing\",\n  \"status\": \"New\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "create a new task"
+					},
+					"response": [
+						{
+							"name": "created a new task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"title\": \"consequat enim\",\n  \"status\": \"Completed\",\n  \"dueDate\": \"1982-12-23T18:35:27.750Z\"\n}"
+						},
+						{
+							"name": "sent wrongly formatted data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"Bad data sent\""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000/todolist/api/v1",
+			"type": "string"
+		}
+	]
+}

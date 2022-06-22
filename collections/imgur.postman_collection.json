@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "ec325813-ca7a-4c83-82dd-67f1e47bb1dc",
+		"name": "imgur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21429501"
+	},
+	"item": [
+		{
+			"name": "my account images",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "tokenName",
+							"value": "Postman IMGUR Token",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "90f2b640ff1e5821670099874866e1c1da2f603a",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "2d88bd72e192533",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api.imgur.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://api.imgur.com/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.getpostman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.imgur.com/3/account/me/images",
+					"protocol": "https",
+					"host": [
+						"api",
+						"imgur",
+						"com"
+					],
+					"path": [
+						"3",
+						"account",
+						"me",
+						"images"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

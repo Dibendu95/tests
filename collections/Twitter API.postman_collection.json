@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "168a3b64-c70d-488e-9b1d-3c0ab2a0ddfb",
+		"name": "Twitter API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21429501"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api.twitter.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "8iJy0pDTaBPMpseWTZIJ3y52g6p6QtMj4TBjzqSdhE2Nm36BW8",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "7wKpS8CQrGGTIAYjtLDN0XcCs",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://api.twitter.com/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.getpostman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Postman Twitter Token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
